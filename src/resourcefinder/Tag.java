@@ -12,12 +12,13 @@ public class Tag
     // Constructor
     public Tag()
     {
-        
+        name = "";
+        numberOfSearches = 0;
     }
     
     void updateSearches()
     {
-        
+        numberOfSearches++;
     }
     
     

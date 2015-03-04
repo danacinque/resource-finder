@@ -15,9 +15,9 @@ public class App implements ActionListener
      */
     public static void main(String[] args)
     {
-        Model model;
+        Model db = new Model();
         View view = new View();
-        Controller controller;
+        Controller controller = new Controller();
     }
 
     @Override

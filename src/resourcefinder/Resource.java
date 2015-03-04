@@ -11,23 +11,26 @@ public class Resource
     String name;
     String description;
     String link;
-    ArrayList<Tag> tags;
-    int numberOfSearches;
-    int numberOfFavorites;
+    TagCollection tags;
+    int numberOfSearches = 0;
+    int numberOfFavorites = 0;
     
     public Resource()
     {
-        
+        name = "";
+        description = "";
+        link = "";
+        tags = new TagCollection();
     }
     
     void updateSearches()
     {
-        
+        numberOfSearches++;
     }
     
     void updateFavorites()
     {
-        
+        numberOfFavorites++;
     }
     
 }

@@ -13,21 +13,21 @@ public class TagCollection
     
     public TagCollection()
     {
-        
+        tags = new ArrayList();
     }
     
     void add(Tag toAdd)
     {
-        
+        tags.add(toAdd);
     }
     
     void delete(Tag toDelete)
     {
-        
+        tags.remove(toDelete);
     }
     
-    void get(Tag toGet)
+    String getInfo(Tag toGet)
     {
-        
+        return (toGet.name + " - " + toGet.numberOfSearches + " searches");
     }
 }

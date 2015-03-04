@@ -13,6 +13,11 @@ public class Controller implements ActionListener
     User currentUser;
     Search currentSearch;
 
+    public Controller()
+    {
+        
+    }
+    
     @Override
     public void actionPerformed(ActionEvent e)
     {
@@ -30,6 +35,9 @@ public class Controller implements ActionListener
                 currentUser.favorites.add(selected);
         
         */
+        
+        
+        
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
