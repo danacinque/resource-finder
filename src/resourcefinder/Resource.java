@@ -23,6 +23,15 @@ public class Resource
         tags = new TagCollection();
     }
     
+    // TEMPORARY
+    public void printInfo()
+    {
+        System.out.println(name + ": " + description);
+        System.out.println("Link: " + link);
+        System.out.println("Searches: " + numberOfSearches);
+        System.out.println("Favorites: " + numberOfFavorites);
+    }
+    
     void updateSearches()
     {
         numberOfSearches++;

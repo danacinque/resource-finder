@@ -10,9 +10,9 @@ public class Tag
     int numberOfSearches;
     
     // Constructor
-    public Tag()
+    public Tag(String name)
     {
-        name = "";
+        this.name = name;
         numberOfSearches = 0;
     }
     
