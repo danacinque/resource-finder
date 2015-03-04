@@ -26,8 +26,8 @@ public class TagCollection
         tags.remove(toDelete);
     }
     
-    String getInfo(Tag toGet)
+    void getInfo(Tag toGet)
     {
-        return (toGet.name + " - " + toGet.numberOfSearches + " searches");
+        toGet.printInfo();
     }
 }

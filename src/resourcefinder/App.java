@@ -15,7 +15,7 @@ public class App implements ActionListener
      */
     public static void main(String[] args)
     {
-        Model db = new Model();
+        Database db = new Database();
         View view = new View();
         Controller controller = new Controller();
     }

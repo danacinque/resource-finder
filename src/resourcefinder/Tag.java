@@ -21,5 +21,9 @@ public class Tag
         numberOfSearches++;
     }
     
+    void printInfo()
+    {
+        System.out.println(name + ": " + numberOfSearches);
+    }
     
 }
