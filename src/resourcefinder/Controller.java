@@ -2,6 +2,8 @@ package resourcefinder;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.ArrayList;
+import java.util.Scanner;
 
 /**
  *
@@ -10,12 +12,31 @@ import java.awt.event.ActionListener;
 public class Controller implements ActionListener
 {
     
+    Database db; // model
+    View view;
+    
     User currentUser;
     Search currentSearch;
 
     public Controller()
     {
+        db = new Database();
         
+        // TEMPORARY: let's get this back-end shit working
+        System.out.println("Welcome to the thing!");
+        Scanner in = new Scanner(System.in);
+        
+        ArrayList<Tag> searchCriteria = new ArrayList();
+        System.out.println("Enter a tag to search for, -1 when done: ");
+        String input = in.next();
+        while (!input.equals("-1"))
+        {
+            Tag t = new Tag(input);
+            searchCriteria.add(t);
+            input = in.next();
+        }
+        Search search = new Search(searchCriteria);
+        System.out.println(search.results);
     }
     
     @Override

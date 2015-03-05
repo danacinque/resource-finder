@@ -30,6 +30,7 @@ public class Resource
         System.out.println("Link: " + link);
         System.out.println("Searches: " + numberOfSearches);
         System.out.println("Favorites: " + numberOfFavorites);
+        System.out.println(tags.getInfo());
     }
     
     void updateSearches()

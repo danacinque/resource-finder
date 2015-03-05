@@ -26,8 +26,28 @@ public class TagCollection
         tags.remove(toDelete);
     }
     
-    void getInfo(Tag toGet)
+    String getInfo()
     {
-        toGet.printInfo();
+        String info = "Tags: ";
+        
+        for (Tag t : tags)
+        {
+            info += (t + ", ");
+        }
+        
+        return info;
+    }
+    
+    boolean contains(Tag tag)
+    {
+        boolean result = false;
+        for (Tag t : tags)
+        {
+            if (tag.name.equals(t.name))
+            {
+                result = true;
+            }
+        }
+        return result;
     }
 }

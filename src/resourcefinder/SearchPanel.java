@@ -15,9 +15,8 @@ import javax.swing.*;
 public class SearchPanel extends JPanel implements ItemListener, ActionListener
 {
     
-    JCheckBox free;
-    JCheckBox subscription;
-    JCheckBox oneTime;
+    JCheckBox free, subscription, oneTimePayment;
+    Search searchInProgress;
     
     public SearchPanel()
     {
@@ -34,19 +33,23 @@ public class SearchPanel extends JPanel implements ItemListener, ActionListener
         add(basics);
         
         // Fuck it
-        JButton compSci = new JButton("<html><font size=-1>Computer Science</font></html>");
+        JButton compSci = new JButton("Computer Science");
         compSci.setBounds(500, 200, 150, 35);
+        compSci.addActionListener(this);
         add(compSci);
         
         free = new JCheckBox("Free");
+        free.addItemListener(this);
         subscription = new JCheckBox("Subscription");
-        oneTime = new JCheckBox("One-time Payment");
+        subscription.addItemListener(this);
+        oneTimePayment = new JCheckBox("One-time Payment");
+        oneTimePayment.addItemListener(this);
         
         JPanel paymentPanel = new JPanel(new GridLayout(0, 1));
         paymentPanel.setBounds(200, 200, 200, 100);
         paymentPanel.add(free);
         paymentPanel.add(subscription);
-        paymentPanel.add(oneTime);
+        paymentPanel.add(oneTimePayment);
         add(paymentPanel);
         
         repaint();
@@ -57,7 +60,8 @@ public class SearchPanel extends JPanel implements ItemListener, ActionListener
     @Override
     public void actionPerformed(ActionEvent e)
     {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        
+        
     }
 
     @Override
@@ -65,6 +69,9 @@ public class SearchPanel extends JPanel implements ItemListener, ActionListener
     {
         Object source = e.getItemSelectable();
         
-        // search(source, e);
+        if (e.getStateChange() == ItemEvent.SELECTED)
+        {
+            
+        }
     }
 }
