@@ -35,7 +35,7 @@ public class Resource
     
     public String getInfo()
     {
-        return name + ": " + description + "\nLink: " + link; 
+        return "<html>" + name + ": " + description + "<br>Link: " + link + "</html>"; 
     }
     
     void updateSearches()

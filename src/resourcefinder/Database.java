@@ -13,7 +13,8 @@ public class Database
     static ArrayList<Resource> resourceDB;
     static TagCollection tagDB;
     
-    static Resource coursera, codecademy, sciShow, khanAcademy;
+    static Resource coursera, codecademy, sciShow, khanAcademy,
+            udacity, lynda, hourOfCode;
     
     FavoritesList favorites;
     
@@ -104,6 +105,56 @@ public class Database
         khanAcademy.tags.add(new Tag("Mathematics"));
         
         resourceDB.add(khanAcademy);
+        
+        /*
+            UDACITY
+        =============================================================
+        */
+        udacity = new Resource();
+        udacity.name = "Udacity";
+        udacity.description = "Udacity focuses on 'nanodegrees' that train "
+                + "users in skills from web development to data analytics.";
+        udacity.link = "www.udacity.com";
+        udacity.tags.add(new Tag("Course"));
+        udacity.tags.add(new Tag("Free"));
+        udacity.tags.add(new Tag("Self-Paced"));
+        udacity.tags.add(new Tag("Computer Science"));
+        udacity.tags.add(new Tag("Credit/Certificate Available"));
+        
+        resourceDB.add(udacity);
+        
+        /*
+            LYNDA
+        =============================================================
+        */
+        lynda = new Resource();
+        lynda.name = "Lynda";
+        lynda.description = "Lynda is a subscription service offering "
+                + "thousands of tutorial videos. It's free to PSU students!";
+        lynda.link = "lynda.psu.edu";
+        lynda.tags.add(new Tag("Subscription"));
+        lynda.tags.add(new Tag("Reference"));
+        lynda.tags.add(new Tag("Self-Paced"));
+        lynda.tags.add(new Tag("Computer Science"));
+        
+        resourceDB.add(lynda);
+        
+        /*
+            HOUR OF CODE
+        =============================================================
+        */
+        hourOfCode = new Resource();
+        hourOfCode.name = "Code.org (Hour of Code)";
+        hourOfCode.description = "Code.org offers exercises that can be "
+                + "completed in under an hour.";
+        hourOfCode.link = "code.org";
+        hourOfCode.tags.add(new Tag("Free"));
+        hourOfCode.tags.add(new Tag("Practice"));
+        hourOfCode.tags.add(new Tag("Self-Paced"));
+        hourOfCode.tags.add(new Tag("Computer Science"));
+        
+        resourceDB.add(hourOfCode);
+        
     }
     
     // NOTE TO SELF: FIGURE OUT HOW SERIALIZATION WORKS
