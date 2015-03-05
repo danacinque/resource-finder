@@ -39,6 +39,12 @@ public class Controller implements ActionListener
         }
         Search search = new Search(searchCriteria);
         System.out.println(search.getResults());*/
+        
+        
+        if (!view.searchPanel.isVisible())
+        {
+            view.resultsPanel.setVisible(true);
+        }
     }
     
     @Override
@@ -47,7 +53,9 @@ public class Controller implements ActionListener
         /* 
             if (e == User in loginPanel)
                 currentUser.assign(selected);
-        */    
+        */
+        
+        
     }
 
 }

@@ -1,5 +1,6 @@
 package resourcefinder;
 
+import java.awt.Color;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import javax.swing.*;
@@ -23,7 +24,7 @@ public class View implements ActionListener
         frame = new JFrame();
         frame.setTitle("Resource Finder");
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        frame.setSize(1000, 600);
+        frame.setSize(800, 700);
         
         // LoginPanel setup
         // WILL NOT BE IMPLEMENTED IN ROUND 1
@@ -45,7 +46,8 @@ public class View implements ActionListener
     @Override
     public void actionPerformed(ActionEvent e)
     {
+        Object o = e.getSource();
         
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        
     }
 }

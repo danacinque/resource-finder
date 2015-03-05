@@ -19,13 +19,16 @@ public class ResultsPanel extends JPanel implements ActionListener, ItemListener
         super();
         
         setLayout(null);
-        setBounds(1000, 800, 0, 0);
+        setBounds(0, 350, 800, 400);
+        //resultsPanel.setBackground(Color.red);
         
         JLabel title = new JLabel("<html><font size=+2>Results</font></html>",
                                     JLabel.CENTER);
         title.setBounds(30, 30, 150, 50);
         title.setBorder(BorderFactory.createLineBorder(Color.black));
         add(title);
+        
+        setBackground(Color.yellow);
     }
 
     @Override

@@ -28,14 +28,15 @@ public class SearchPanel extends JPanel implements ItemListener, ActionListener
         super();
         
         setLayout(null);
-        setBounds(1000, 800, 0, 0);
+        setBounds(0, 0, 800, 350);
+        //setBackground(Color.CYAN);
         
         // TEXT: THE BASICS
-        JLabel basics = new JLabel("<html><font size=+2>The Basics</font></html>",
+        JLabel title = new JLabel("<html><font size=+2>Search</font></html>",
                                     JLabel.CENTER);
-        basics.setBounds(30, 30, 150, 50);
-        basics.setBorder(BorderFactory.createLineBorder(Color.black));
-        add(basics);
+        title.setBounds(30, 30, 150, 50);
+        title.setBorder(BorderFactory.createLineBorder(Color.black));
+        add(title);
         
         /*
             CONTENT TYPE OPTIONS
@@ -48,7 +49,7 @@ public class SearchPanel extends JPanel implements ItemListener, ActionListener
         reference.addItemListener(this);
         
         JPanel contentTypePanel = new JPanel(new GridLayout(0, 1));
-        contentTypePanel.setBounds(100, 200, 200, 100);
+        contentTypePanel.setBounds(30, 100, 200, 100);
         contentTypePanel.setBorder(BorderFactory.createLineBorder(Color.black));
         contentTypePanel.add(course);
         contentTypePanel.add(practice);
@@ -64,7 +65,7 @@ public class SearchPanel extends JPanel implements ItemListener, ActionListener
         scheduled.addItemListener(this);
         
         JPanel timingPanel = new JPanel(new GridLayout(0, 1));
-        timingPanel.setBounds(320, 200, 200, 100);
+        timingPanel.setBounds(250, 100, 200, 100);
         timingPanel.setBorder(BorderFactory.createLineBorder(Color.black));
         timingPanel.add(selfPaced);
         timingPanel.add(scheduled);
@@ -81,7 +82,7 @@ public class SearchPanel extends JPanel implements ItemListener, ActionListener
         oneTimePayment.addItemListener(this);
         
         JPanel paymentPanel = new JPanel(new GridLayout(0, 1));
-        paymentPanel.setBounds(540, 200, 200, 100);
+        paymentPanel.setBounds(470, 100, 200, 100);
         paymentPanel.setBorder(BorderFactory.createLineBorder(Color.black));
         paymentPanel.add(free);
         paymentPanel.add(subscription);
@@ -97,7 +98,7 @@ public class SearchPanel extends JPanel implements ItemListener, ActionListener
         creditAvailable.addItemListener(this);
         
         JPanel otherOptionsPanel = new JPanel(new GridLayout(0, 1));
-        otherOptionsPanel.setBounds(100, 420, 250, 100);
+        otherOptionsPanel.setBounds(30, 220, 250, 100);
         otherOptionsPanel.setBorder(BorderFactory.createLineBorder(Color.black));
         otherOptionsPanel.add(feedbackAvailable);
         otherOptionsPanel.add(creditAvailable);
@@ -117,7 +118,7 @@ public class SearchPanel extends JPanel implements ItemListener, ActionListener
         mathematics.addItemListener(this);
         
         JPanel subjectMaterialPanel = new JPanel(new GridLayout(0, 1));
-        subjectMaterialPanel.setBounds(540, 420, 200, 100);
+        subjectMaterialPanel.setBounds(300, 220, 250, 100);
         subjectMaterialPanel.setBorder(BorderFactory.createLineBorder(Color.black));
         subjectMaterialPanel.add(computerScience);
         subjectMaterialPanel.add(biology);
@@ -129,7 +130,7 @@ public class SearchPanel extends JPanel implements ItemListener, ActionListener
             SEARCH BUTTON
         */
         search = new JButton("Search");
-        search.setBounds(800, 450, 100, 60);
+        search.setBounds(570, 240, 100, 60);
         search.addActionListener(this);
         add(search);
         
