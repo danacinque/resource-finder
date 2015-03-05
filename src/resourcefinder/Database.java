@@ -15,6 +15,8 @@ public class Database
     
     static Resource coursera, codecademy, sciShow, khanAcademy;
     
+    FavoritesList favorites;
+    
     public Database()
     {
         resourceDB = new ArrayList();
@@ -22,6 +24,10 @@ public class Database
         
         tagDBSetup();
         resourceDBSetup();
+        
+        // This will be more complex when we expand into multiple
+        // user roles in the second development cycle
+        favorites = new FavoritesList("Default User");
     }
     
     // NOTE TO SELF: FIGURE OUT HOW SERIALIZATION WORKS

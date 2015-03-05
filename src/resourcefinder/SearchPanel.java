@@ -154,6 +154,7 @@ public class SearchPanel extends JPanel implements ItemListener, ActionListener
             //searchInProgress.search(criteria);
             this.setVisible(false);
             view.resultsPanel.setVisible(true);
+            view.resultsPanel.populateResults(searchInProgress);
         }
         else if (o instanceof javax.swing.JButton)
         {

@@ -33,6 +33,11 @@ public class Resource
         System.out.println(tags.getInfo());
     }
     
+    public String getInfo()
+    {
+        return name + ": " + description + "\nLink: " + link; 
+    }
+    
     void updateSearches()
     {
         numberOfSearches++;
