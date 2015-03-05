@@ -23,13 +23,16 @@ public class SearchPanel extends JPanel implements ItemListener, ActionListener
     Search searchInProgress;
     ArrayList<Tag> criteria;
     
-    public SearchPanel()
+    View view;
+    
+    public SearchPanel(View theView)
     {
         super();
         
+        view = theView;
+        
         setLayout(null);
-        setBounds(0, 0, 800, 350);
-        //setBackground(Color.CYAN);
+        setBounds(0, 0, 800, 400);
         
         // TEXT: THE BASICS
         JLabel title = new JLabel("<html><font size=+2>Search</font></html>",
@@ -150,6 +153,7 @@ public class SearchPanel extends JPanel implements ItemListener, ActionListener
             System.out.println(searchInProgress.getResults());
             //searchInProgress.search(criteria);
             this.setVisible(false);
+            view.resultsPanel.setVisible(true);
         }
         else if (o instanceof javax.swing.JButton)
         {

@@ -24,7 +24,7 @@ public class View implements ActionListener
         frame = new JFrame();
         frame.setTitle("Resource Finder");
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        frame.setSize(800, 700);
+        frame.setSize(800, 400);
         
         // LoginPanel setup
         // WILL NOT BE IMPLEMENTED IN ROUND 1
@@ -33,9 +33,10 @@ public class View implements ActionListener
         // ResultsPanel setup
         resultsPanel = new ResultsPanel();
         frame.add(resultsPanel);
+        resultsPanel.setVisible(false);
 
         // SearchPanel setup
-        searchPanel = new SearchPanel();
+        searchPanel = new SearchPanel(this);
         frame.add(searchPanel);
         
         

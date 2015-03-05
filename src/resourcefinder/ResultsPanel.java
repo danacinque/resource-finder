@@ -19,8 +19,7 @@ public class ResultsPanel extends JPanel implements ActionListener, ItemListener
         super();
         
         setLayout(null);
-        setBounds(0, 350, 800, 400);
-        //resultsPanel.setBackground(Color.red);
+        setBounds(0, 0, 800, 400);
         
         JLabel title = new JLabel("<html><font size=+2>Results</font></html>",
                                     JLabel.CENTER);
@@ -28,7 +27,17 @@ public class ResultsPanel extends JPanel implements ActionListener, ItemListener
         title.setBorder(BorderFactory.createLineBorder(Color.black));
         add(title);
         
-        setBackground(Color.yellow);
+        JScrollPane scroll = new JScrollPane(this);
+        
+        JPanel resultPane = new JPanel(new GridLayout(0, 2));
+        resultPane.setBounds(30, 110, 740, 230);
+        resultPane.setBorder(BorderFactory.createLineBorder(Color.black));
+        add(resultPane);
+    }
+    
+    public void populateResults(Search mostRecentSearch)
+    {
+        
     }
 
     @Override

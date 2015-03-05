@@ -41,10 +41,6 @@ public class Controller implements ActionListener
         System.out.println(search.getResults());*/
         
         
-        if (!view.searchPanel.isVisible())
-        {
-            view.resultsPanel.setVisible(true);
-        }
     }
     
     @Override
