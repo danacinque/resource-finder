@@ -16,8 +16,10 @@ import javax.swing.*;
 public class SearchPanel extends JPanel implements ItemListener, ActionListener
 {
     
-    JCheckBox free, subscription, oneTimePayment;
-    JButton computerScience, biology, physics, search;
+    JCheckBox course, practice, reference, selfPaced, scheduled, 
+            free, subscription, oneTimePayment, feedbackAvailable, creditAvailable,
+            computerScience, biology, physics, mathematics;
+    JButton search;
     Search searchInProgress;
     ArrayList<Tag> criteria;
     
@@ -35,17 +37,42 @@ public class SearchPanel extends JPanel implements ItemListener, ActionListener
         basics.setBorder(BorderFactory.createLineBorder(Color.black));
         add(basics);
         
-        // Fuck it
-        computerScience = new JButton("Computer Science");
-        computerScience.setBounds(500, 200, 150, 35);
-        computerScience.addActionListener(this);
-        add(computerScience);
+        /*
+            CONTENT TYPE OPTIONS
+        */
+        course = new JCheckBox("Course");
+        course.addItemListener(this);
+        practice = new JCheckBox("Practice");
+        practice.addItemListener(this);
+        reference = new JCheckBox("Reference");
+        reference.addItemListener(this);
         
-        biology = new JButton("Biology");
-        biology.setBounds(500, 250, 150, 35);
-        biology.addActionListener(this);
-        add(biology);
+        JPanel contentTypePanel = new JPanel(new GridLayout(0, 1));
+        contentTypePanel.setBounds(100, 200, 200, 100);
+        contentTypePanel.setBorder(BorderFactory.createLineBorder(Color.black));
+        contentTypePanel.add(course);
+        contentTypePanel.add(practice);
+        contentTypePanel.add(reference);
+        add(contentTypePanel);
         
+        /*
+            TIMING OPTIONS
+        */
+        selfPaced = new JCheckBox("Self-Paced");
+        selfPaced.addItemListener(this);
+        scheduled = new JCheckBox("Scheduled");
+        scheduled.addItemListener(this);
+        
+        JPanel timingPanel = new JPanel(new GridLayout(0, 1));
+        timingPanel.setBounds(320, 200, 200, 100);
+        timingPanel.setBorder(BorderFactory.createLineBorder(Color.black));
+        timingPanel.add(selfPaced);
+        timingPanel.add(scheduled);
+        add(timingPanel);
+        
+        /*
+            PAYMENT OPTIONS
+        */
         free = new JCheckBox("Free");
         free.addItemListener(this);
         subscription = new JCheckBox("Subscription");
@@ -53,17 +80,58 @@ public class SearchPanel extends JPanel implements ItemListener, ActionListener
         oneTimePayment = new JCheckBox("One-time Payment");
         oneTimePayment.addItemListener(this);
         
-        search = new JButton("Search");
-        search.setBounds(800, 450, 100, 100);
-        search.addActionListener(this);
-        add(search);
-        
         JPanel paymentPanel = new JPanel(new GridLayout(0, 1));
-        paymentPanel.setBounds(200, 200, 200, 100);
+        paymentPanel.setBounds(540, 200, 200, 100);
+        paymentPanel.setBorder(BorderFactory.createLineBorder(Color.black));
         paymentPanel.add(free);
         paymentPanel.add(subscription);
         paymentPanel.add(oneTimePayment);
         add(paymentPanel);
+        
+        /*
+            OTHER OPTIONS
+        */
+        feedbackAvailable = new JCheckBox("Feedback Available");
+        feedbackAvailable.addItemListener(this);
+        creditAvailable = new JCheckBox("Credit/Certificate Available");
+        creditAvailable.addItemListener(this);
+        
+        JPanel otherOptionsPanel = new JPanel(new GridLayout(0, 1));
+        otherOptionsPanel.setBounds(100, 420, 250, 100);
+        otherOptionsPanel.setBorder(BorderFactory.createLineBorder(Color.black));
+        otherOptionsPanel.add(feedbackAvailable);
+        otherOptionsPanel.add(creditAvailable);
+        add(otherOptionsPanel);
+        
+        
+        /*
+            SUBJECT MATERIAL OPTIONS
+        */
+        computerScience = new JCheckBox("Computer Science");
+        computerScience.addItemListener(this);
+        biology = new JCheckBox("Biology");
+        biology.addItemListener(this);
+        physics = new JCheckBox("Physics");
+        physics.addItemListener(this);
+        mathematics = new JCheckBox("Mathematics");
+        mathematics.addItemListener(this);
+        
+        JPanel subjectMaterialPanel = new JPanel(new GridLayout(0, 1));
+        subjectMaterialPanel.setBounds(540, 420, 200, 100);
+        subjectMaterialPanel.setBorder(BorderFactory.createLineBorder(Color.black));
+        subjectMaterialPanel.add(computerScience);
+        subjectMaterialPanel.add(biology);
+        subjectMaterialPanel.add(physics);
+        subjectMaterialPanel.add(mathematics);
+        add(subjectMaterialPanel);
+        
+        /*
+            SEARCH BUTTON
+        */
+        search = new JButton("Search");
+        search.setBounds(800, 450, 100, 60);
+        search.addActionListener(this);
+        add(search);
         
         repaint();
                 
@@ -80,6 +148,7 @@ public class SearchPanel extends JPanel implements ItemListener, ActionListener
             searchInProgress = new Search(criteria);
             System.out.println(searchInProgress.getResults());
             //searchInProgress.search(criteria);
+            this.setVisible(false);
         }
         else if (o instanceof javax.swing.JButton)
         {

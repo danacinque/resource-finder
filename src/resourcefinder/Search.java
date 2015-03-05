@@ -55,4 +55,11 @@ public class Search
 
         return resultString;
     }
+    
+    String getResults(Resource result)
+    {
+        // TODO: return matching tags only
+        return result.name + ": " + result.description + "\n" + "Link: " 
+                    + result.link + "\n" + result.tags.getInfo() + "\n\n";
+    }
 }

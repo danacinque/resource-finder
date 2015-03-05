@@ -29,12 +29,15 @@ public class View implements ActionListener
         // WILL NOT BE IMPLEMENTED IN ROUND 1
         loginPanel = new LoginPanel();
         
+        // ResultsPanel setup
+        resultsPanel = new ResultsPanel();
+        frame.add(resultsPanel);
+
         // SearchPanel setup
         searchPanel = new SearchPanel();
         frame.add(searchPanel);
         
-        // ResultsPanel setup
-        resultsPanel = new ResultsPanel();
+        
         
         frame.setVisible(true);
     }
