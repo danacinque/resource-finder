@@ -14,12 +14,14 @@ public class Search
 
     ArrayList<Tag> tags;
     ArrayList<Resource> results;
-    Database db = new Database();
+    Database db;
 
     // Constructor
     public Search(ArrayList<Tag> criteria)
     {
         tags = criteria;
+        db = new Database();
+        results = new ArrayList();
         
         /*for (Resource r : db.resourceDB)
         {

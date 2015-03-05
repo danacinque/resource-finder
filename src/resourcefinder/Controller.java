@@ -36,7 +36,7 @@ public class Controller implements ActionListener
             input = in.next();
         }
         Search search = new Search(searchCriteria);
-        System.out.println(search.results);
+        System.out.println(search.getResults());
     }
     
     @Override

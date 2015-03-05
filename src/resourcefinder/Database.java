@@ -40,14 +40,14 @@ public class Database
                 + " a variety of subjects.";
         coursera.link = "www.coursera.org";
         // If I can condense this somehow that would be A+
-        coursera.tags.add(course);
-        coursera.tags.add(scheduled);
-        coursera.tags.add(free);
-        coursera.tags.add(feedbackAvailable);
-        coursera.tags.add(creditAvailable);
-        coursera.tags.add(business);
-        coursera.tags.add(computerScience);
-        coursera.tags.add(naturalScience);
+        coursera.tags.add(new Tag("Course"));
+        coursera.tags.add(new Tag("Scheduled"));
+        coursera.tags.add(new Tag("Free)"));
+        coursera.tags.add(new Tag("Feedback Available"));
+        coursera.tags.add(new Tag("Credit Available"));
+        coursera.tags.add(new Tag("Business"));
+        coursera.tags.add(new Tag("Computer Science"));
+        coursera.tags.add(new Tag("Natural Science"));
         
         resourceDB.add(coursera);
         
@@ -64,6 +64,8 @@ public class Database
         codecademy.tags.add(free);
         codecademy.tags.add(computerScience);
         
+        //resourceDB.add(codecademy);
+        
         /*
             SCISHOW
         =============================================================
@@ -77,6 +79,8 @@ public class Database
         sciShow.tags.add(selfPaced);
         sciShow.tags.add(free);
         sciShow.tags.add(naturalScience);
+        
+        //resourceDB.add(sciShow);
         
         /*
             KHAN ACADEMY
@@ -92,6 +96,8 @@ public class Database
         khanAcademy.tags.add(free);
         khanAcademy.tags.add(computerScience);
         khanAcademy.tags.add(naturalScience);
+        
+        //resourceDB.add(khanAcademy);
     }
     
     // NOTE TO SELF: FIGURE OUT HOW SERIALIZATION WORKS
@@ -99,12 +105,17 @@ public class Database
     {
         // Content type
         Tag course = new Tag("Course");
+        tagDB.add(course);
         Tag practice = new Tag("Practice");
+        tagDB.add(practice);
         Tag reference = new Tag("Reference");
+        tagDB.add(reference);
         
         // Timing
         Tag selfPaced = new Tag("Self-Paced");
+        tagDB.add(selfPaced);
         Tag scheduled = new Tag("Scheduled");
+        tagDB.add(scheduled);
         
         // Cost
         Tag free = new Tag("Free");
@@ -119,6 +130,7 @@ public class Database
         Tag business = new Tag("Business/Management");
         Tag computerScience = new Tag("Computer Science");
         Tag naturalScience = new Tag("Natural Science");
+        
         
     }
 }
