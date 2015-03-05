@@ -32,9 +32,9 @@ public class TagCollection
         
         for (Tag t : tags)
         {
-            info += (t + ", ");
+            info += (t.name + ", ");
         }
-        
+        info = info.substring(0, (info.length() - 2)); // Trim off last ", "
         return info;
     }
     

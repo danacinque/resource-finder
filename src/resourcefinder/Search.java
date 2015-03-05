@@ -63,7 +63,7 @@ public class Search
         for (Resource r : results)
         {
             resultString += r.name + ": " + r.description + "\n"
-                    + "Link: " + r.link + "\n\n";
+                    + "Link: " + r.link + "\n" + r.tags.getInfo() + "\n\n";
         }
 
         return resultString;

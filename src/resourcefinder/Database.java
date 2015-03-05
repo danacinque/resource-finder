@@ -13,9 +13,6 @@ public class Database
     static ArrayList<Resource> resourceDB;
     static TagCollection tagDB;
     
-    static Tag course, practice, reference, selfPaced, scheduled, free, oneTimePayment,
-            subscription, feedbackAvailable, creditAvailable, business,
-            computerScience, naturalScience;
     static Resource coursera, codecademy, sciShow, khanAcademy;
     
     public Database()
@@ -45,9 +42,10 @@ public class Database
         coursera.tags.add(new Tag("Free)"));
         coursera.tags.add(new Tag("Feedback Available"));
         coursera.tags.add(new Tag("Credit Available"));
-        coursera.tags.add(new Tag("Business"));
         coursera.tags.add(new Tag("Computer Science"));
-        coursera.tags.add(new Tag("Natural Science"));
+        coursera.tags.add(new Tag("Biology"));
+        coursera.tags.add(new Tag("Physics"));
+        coursera.tags.add(new Tag("Mathematics"));
         
         resourceDB.add(coursera);
         
@@ -59,12 +57,12 @@ public class Database
         codecademy.name = "Codecademy";
         codecademy.description = "Codecademy teaches you how to code!";
         codecademy.link = "www.codecademy.com/";
-        codecademy.tags.add(course);
-        codecademy.tags.add(selfPaced);
-        codecademy.tags.add(free);
-        codecademy.tags.add(computerScience);
+        codecademy.tags.add(new Tag("Course"));
+        codecademy.tags.add(new Tag("Self-Paced"));
+        codecademy.tags.add(new Tag("Free"));
+        codecademy.tags.add(new Tag("Computer Science"));
         
-        //resourceDB.add(codecademy);
+        resourceDB.add(codecademy);
         
         /*
             SCISHOW
@@ -75,12 +73,13 @@ public class Database
         sciShow.description = "SciShow is a YouTube channel created by"
                 + " Hank Green.";
         sciShow.link = "www.youtube.com/scishow";
-        sciShow.tags.add(reference);
-        sciShow.tags.add(selfPaced);
-        sciShow.tags.add(free);
-        sciShow.tags.add(naturalScience);
+        sciShow.tags.add(new Tag("Reference"));
+        sciShow.tags.add(new Tag("Self-paced"));
+        sciShow.tags.add(new Tag("Free"));
+        sciShow.tags.add(new Tag("Biology"));
+        sciShow.tags.add(new Tag("Physics"));
         
-        //resourceDB.add(sciShow);
+        resourceDB.add(sciShow);
         
         /*
             KHAN ACADEMY
@@ -90,14 +89,15 @@ public class Database
         khanAcademy.name = "Khan Academy";
         khanAcademy.description = "Khan Academy is awesome!";
         khanAcademy.link = "www.khanacademy.org";
-        khanAcademy.tags.add(course);
-        khanAcademy.tags.add(reference);
-        khanAcademy.tags.add(selfPaced);
-        khanAcademy.tags.add(free);
-        khanAcademy.tags.add(computerScience);
-        khanAcademy.tags.add(naturalScience);
+        khanAcademy.tags.add(new Tag("Course"));
+        khanAcademy.tags.add(new Tag("Reference"));
+        khanAcademy.tags.add(new Tag("Self-Paced"));
+        khanAcademy.tags.add(new Tag("Free"));
+        khanAcademy.tags.add(new Tag("Computer Science"));
+        khanAcademy.tags.add(new Tag("Physics"));
+        khanAcademy.tags.add(new Tag("Mathematics"));
         
-        //resourceDB.add(khanAcademy);
+        resourceDB.add(khanAcademy);
     }
     
     // NOTE TO SELF: FIGURE OUT HOW SERIALIZATION WORKS
@@ -119,17 +119,27 @@ public class Database
         
         // Cost
         Tag free = new Tag("Free");
+        tagDB.add(free);
         Tag oneTimePayment = new Tag("One-Time Payment");
+        tagDB.add(oneTimePayment);
         Tag subscription = new Tag("Subscription");
+        tagDB.add(subscription);
         
         // Misc.
         Tag feedbackAvailable = new Tag("Feedback Available");
+        tagDB.add(feedbackAvailable);
         Tag creditAvailable = new Tag("Credit/Certificate Available");
+        tagDB.add(creditAvailable);
         
         // Subject material
-        Tag business = new Tag("Business/Management");
         Tag computerScience = new Tag("Computer Science");
-        Tag naturalScience = new Tag("Natural Science");
+        tagDB.add(computerScience);
+        Tag biology = new Tag("Biology");
+        tagDB.add(biology);
+        Tag physics = new Tag("Physics");
+        tagDB.add(physics);
+        Tag mathematics = new Tag("Mathematics");
+        tagDB.add(mathematics);
         
         
     }

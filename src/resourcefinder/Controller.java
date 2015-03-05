@@ -22,6 +22,8 @@ public class Controller implements ActionListener
     {
         db = new Database();
         
+        //view = new View();
+        
         // TEMPORARY: let's get this back-end shit working
         System.out.println("Welcome to the thing!");
         Scanner in = new Scanner(System.in);
