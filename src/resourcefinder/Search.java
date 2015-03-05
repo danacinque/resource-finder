@@ -23,29 +23,16 @@ public class Search
         db = new Database();
         results = new ArrayList();
         
-        /*for (Resource r : db.resourceDB)
-        {
-            for (Tag t : r.tags.tags)
-            {
-                for (Tag tag : criteria)
-                {
-                    if (t.name.equals(tag.name))
-                    {
-                        results.add(r);
-                    }
-                }
-            }
-        }*/
-        
+        // SEARCH LOGIC V IMPORTANT
         for (Tag t : criteria)
         {
-        for (Resource r : db.resourceDB)
-        {
-            if (r.tags.contains(t))
+            for (Resource r : db.resourceDB)
             {
-                results.add(r);
+                if (r.tags.contains(t))
+                {
+                    results.add(r);
+                }
             }
-        }
         }
     }
 

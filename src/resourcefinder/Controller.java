@@ -22,9 +22,9 @@ public class Controller implements ActionListener
     {
         db = new Database();
         
-        //view = new View();
+        view = new View();
         
-        // TEMPORARY: let's get this back-end shit working
+        /*// TEMPORARY: let's get this back-end shit working
         System.out.println("Welcome to the thing!");
         Scanner in = new Scanner(System.in);
         
@@ -38,7 +38,7 @@ public class Controller implements ActionListener
             input = in.next();
         }
         Search search = new Search(searchCriteria);
-        System.out.println(search.getResults());
+        System.out.println(search.getResults());*/
     }
     
     @Override
