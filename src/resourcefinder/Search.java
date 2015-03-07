@@ -23,7 +23,7 @@ public class Search
         db = new Database();
         results = new ArrayList();
         
-        // SEARCH LOGIC V IMPORTANT
+        // SEARCH LOGIC
         for (Tag t : criteria)
         {
             for (Resource r : db.resourceDB)
@@ -35,7 +35,9 @@ public class Search
             }
         }
     }
-
+    // The search logic made more sense in the constructor,
+    // since the instance of Search is created when the Search
+    // button is clicked, so this is redundant
     ArrayList<Resource> search(ArrayList<Tag> criteria)
     {
         
@@ -43,6 +45,9 @@ public class Search
         return results;
     }
 
+    // Added from initial design
+    // Gets info for all results and puts it into one string
+    // (used at the command line for debugging right now)
     String getResults()
     {
         String resultString = "";
@@ -56,6 +61,8 @@ public class Search
         return resultString;
     }
     
+    // Get info for an individual result
+    // Used for display purposes
     String getResults(Resource result)
     {
         // TODO: return matching tags only

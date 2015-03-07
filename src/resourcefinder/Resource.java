@@ -23,7 +23,7 @@ public class Resource
         tags = new TagCollection();
     }
     
-    // TEMPORARY
+    // TEMPORARY - for command-line version / debugging
     public void printInfo()
     {
         System.out.println(name + ": " + description);

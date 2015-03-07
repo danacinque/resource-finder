@@ -7,7 +7,7 @@ import java.awt.event.ActionListener;
  *
  * @author Dana Cinque <dcinque@psu.edu>
  */
-public class App implements ActionListener
+public class App
 {
 
     /**
@@ -16,12 +16,6 @@ public class App implements ActionListener
     public static void main(String[] args)
     {
         Controller controller = new Controller();
-    }
-
-    @Override
-    public void actionPerformed(ActionEvent e)
-    {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
     
 }

@@ -9,48 +9,51 @@ import java.util.ArrayList;
 public class FavoritesList 
 {
     String name;
-    ArrayList<Resource> favorites;
+    ArrayList<Resource> resources;
     
+    // Constructor
     public FavoritesList(String name)
     {
         this.name = name;
-        favorites = new ArrayList();
+        resources = new ArrayList();
     }
     
+    // Overloaded constructor
     public FavoritesList(String name, ArrayList<Resource> faves)
     {
         this.name = name;
-        favorites = faves;
+        resources = faves;
     }
     
     void add(Resource toAdd)
     {
-        favorites.add(toAdd);
+        resources.add(toAdd);
     }
     
     void delete(Resource toDelete)
     {
-        favorites.remove(toDelete);
+        resources.remove(toDelete);
     }
     
+    // Added
     boolean contains(Resource toCheck)
     {
-        boolean flag = false;
-        if (favorites.contains(toCheck))
+        boolean containsResource = false;
+        if (resources.contains(toCheck))
         {
-            flag = true;
+            containsResource = true;
         }
         else
         {
-            for (Resource r : favorites)
+            for (Resource r : resources)
             {
                 if (r.name.equals(toCheck.name))
                 {
-                    flag = true;
+                    containsResource = true;
                 }
             }
         }
-        return flag;
+        return containsResource;
     }
     
 }

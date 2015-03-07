@@ -26,6 +26,7 @@ public class TagCollection
         tags.remove(toDelete);
     }
     
+    // Added
     String getInfo()
     {
         String info = "Tags: ";
@@ -38,6 +39,7 @@ public class TagCollection
         return info;
     }
     
+    // Added from initial design
     boolean contains(Tag tag)
     {
         boolean result = false;

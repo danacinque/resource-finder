@@ -7,7 +7,11 @@ import java.util.ArrayList;
  * @author Dana Cinque <dcinque@psu.edu>
  */
 
-// This is the model
+/*
+Notes:
+This is the model. I had originally intended to use serialized objects for this,
+but it's proving trickier than I thought, so I will look into other alternatives.
+*/
 public class Database 
 {
     static ArrayList<Resource> resourceDB;
@@ -31,7 +35,6 @@ public class Database
         favorites = new FavoritesList("Default User");
     }
     
-    // NOTE TO SELF: FIGURE OUT HOW SERIALIZATION WORKS
     static public void resourceDBSetup()
     {
         /*
@@ -43,7 +46,7 @@ public class Database
         coursera.description = "Coursera offers structured courses in"
                 + " a variety of subjects.";
         coursera.link = "www.coursera.org";
-        // If I can condense this somehow that would be A+
+        // Note to self: streamline this process
         coursera.tags.add(new Tag("Course"));
         coursera.tags.add(new Tag("Scheduled"));
         coursera.tags.add(new Tag("Free)"));
@@ -147,7 +150,7 @@ public class Database
         hourOfCode.name = "Code.org (Hour of Code)";
         hourOfCode.description = "Code.org offers exercises that can be "
                 + "completed in under an hour.";
-        hourOfCode.link = "code.org";
+        hourOfCode.link = "www.code.org";
         hourOfCode.tags.add(new Tag("Free"));
         hourOfCode.tags.add(new Tag("Practice"));
         hourOfCode.tags.add(new Tag("Self-Paced"));
@@ -157,9 +160,13 @@ public class Database
         
     }
     
-    // NOTE TO SELF: FIGURE OUT HOW SERIALIZATION WORKS
     static public void tagDBSetup()
     {
+        /*
+        This section right now is redundant because I have the tags
+        being added manually to the sources. This will be smoothed out
+        once I have the data storage worked out.
+        */
         // Content type
         Tag course = new Tag("Course");
         tagDB.add(course);

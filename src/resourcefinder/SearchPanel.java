@@ -150,13 +150,12 @@ public class SearchPanel extends JPanel implements ItemListener, ActionListener
         if (o == search)
         {
             searchInProgress = new Search(criteria);
-            System.out.println(searchInProgress.getResults());
-            //searchInProgress.search(criteria);
+            System.out.println(searchInProgress.getResults()); // for debugging
             this.setVisible(false);
             view.resultsPanel.setVisible(true);
             view.resultsPanel.populateResults(searchInProgress);
         }
-        else if (o instanceof javax.swing.JButton)
+        else if (o instanceof JButton)
         {
             JButton temp = (JButton) o;
             Tag criterion = new Tag(temp.getText());
@@ -171,9 +170,13 @@ public class SearchPanel extends JPanel implements ItemListener, ActionListener
     {
         Object source = e.getItemSelectable();
         
+        // I know I can clean this up and make it more concise
+        // There is similar logic in ResultsPanel that I think
+        // is organized better - I'll go off of that
         if (e.getStateChange() == ItemEvent.SELECTED)
+            // User wants to include that criterion
         {
-            if (source instanceof javax.swing.JCheckBox)
+            if (source instanceof JCheckBox)
             {
                 JCheckBox temp = (JCheckBox) source;
                 Tag criterion = new Tag(temp.getText());
@@ -182,8 +185,9 @@ public class SearchPanel extends JPanel implements ItemListener, ActionListener
             }
         }
         else if (e.getStateChange() == ItemEvent.DESELECTED)
+            // User decides they don't want to include that criterion
         {
-            if (source instanceof javax.swing.JCheckBox)
+            if (source instanceof JCheckBox)
             {
                 JCheckBox temp = (JCheckBox) source;
                 Tag criterion = new Tag(temp.getText());

@@ -16,7 +16,7 @@ public class Tag
         numberOfSearches = 0;
     }
     
-    void updateSearches()
+    void updateStats()
     {
         numberOfSearches++;
     }
