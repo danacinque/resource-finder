@@ -27,10 +27,14 @@ public class View implements ActionListener
         frame.setSize(800, 400);
         
         // LoginPanel setup
-        // WILL NOT BE IMPLEMENTED IN ROUND 1
-        loginPanel = new LoginPanel();
+        loginPanel = new LoginPanel(this);
         frame.add(loginPanel);
         loginPanel.setVisible(true);
+        
+        //AdminPanel setup
+        adminPanel = new AdminPanel(this);
+        frame.add(adminPanel);
+        adminPanel.setVisible(false);
         
         // ResultsPanel setup
         resultsPanel = new ResultsPanel();

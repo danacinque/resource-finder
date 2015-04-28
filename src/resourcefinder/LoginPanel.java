@@ -15,30 +15,58 @@ import javax.swing.*;
  */
 public class LoginPanel extends JPanel implements ActionListener
 {
-    JButton loginButton;
-    JTextField input;
-    JLabel info;
+    JButton adminLogin;
+    JTextField adminPasswordField;
+    JLabel adminInfo;
     
-    public LoginPanel()
+    JButton studentLogin;
+    JTextField studentUsernameField;
+    JLabel studentInfo;
+    
+    View theView;
+    
+    public LoginPanel(View theView)
     {
         super();
+        
+        this.theView = theView;
         
         setLayout(null);
         setBounds(0, 0, 800, 400);
         
-        info = new JLabel("<html><font size=+2>Administrator Login</font></html>",
+        // Admin login items
+        adminInfo = new JLabel("<html><font size=+2>Administrator Login</font></html>",
                 JLabel.CENTER);
-        info.setBounds(300, 100, 200, 100);
-        add(info);
+        adminInfo.setBounds(60, 100, 300, 100);
+        add(adminInfo);
         
-        input = new JTextField();
-        input.setBounds(300, 200, 200, 25);
-        add(input);
+        adminPasswordField = new JTextField("Enter Password");
+        adminPasswordField.setBounds(100, 200, 200, 25);
+        add(adminPasswordField);
+        adminPasswordField.addActionListener(this);
         
-        loginButton = new JButton();
-        loginButton.setBounds(300, 250, 200, 25);
-        loginButton.setText("Log In");
-        add(loginButton);
+        adminLogin = new JButton();
+        adminLogin.setBounds(100, 250, 200, 25);
+        adminLogin.setText("Log In");
+        add(adminLogin);
+        adminLogin.addActionListener(this);
+        
+        // Student login items
+        studentInfo = new JLabel("<html><font size=+2>Student Login</font></html>",
+                JLabel.CENTER);
+        studentInfo.setBounds(500, 100, 200, 100);
+        add(studentInfo);
+        
+        studentUsernameField = new JTextField("Enter Username");
+        studentUsernameField.setBounds(500, 200, 200, 25);
+        add(studentUsernameField);
+        studentUsernameField.addActionListener(this);
+        
+        studentLogin = new JButton("Log In");
+        studentLogin.setBounds(500, 250, 200, 25);
+        add(studentLogin);
+        studentLogin.addActionListener(this);
+        
         
     }
 
@@ -46,8 +74,26 @@ public class LoginPanel extends JPanel implements ActionListener
     public void actionPerformed(ActionEvent e)
     {
         Object o = e.getSource();
-        if (o == loginButton)
+        if (o == adminLogin)
         {
+            String password = adminPasswordField.getText();
+            System.out.print("Admin password: " + password);
+            
+            if (password.equals("test"))
+            {
+                setVisible(false);
+                theView.adminPanel.setVisible(true);
+            }
+        }
+        if (o == studentLogin)
+        {
+            String username = studentUsernameField.getText();
+            System.out.print("Student username: " + username);
+            if (username.equals("test"))
+            {
+                setVisible(false);
+                theView.searchPanel.setVisible(true);
+            }
             
         }
     }
