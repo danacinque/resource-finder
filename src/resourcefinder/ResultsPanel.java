@@ -26,6 +26,8 @@ public class ResultsPanel extends JPanel implements ActionListener, ItemListener
 {
     JPanel resultPane;
     JButton saveToFavorites;
+    JButton searchAgain;
+    JButton myAccount;
     ArrayList<Resource> toFavorites;
     
     JLabel savedToFavorites;
@@ -50,8 +52,8 @@ public class ResultsPanel extends JPanel implements ActionListener, ItemListener
         add(resultPane);
         
         // Save to Favorites button
-        saveToFavorites = new JButton("Save Selected Results to Favorites");
-        saveToFavorites.setBounds(520, 30, 250, 50);
+        saveToFavorites = new JButton("Save Selected Results");
+        saveToFavorites.setBounds(300, 30, 150, 50);
         saveToFavorites.addActionListener(this);
         add(saveToFavorites);
         
@@ -59,11 +61,23 @@ public class ResultsPanel extends JPanel implements ActionListener, ItemListener
         // TODO: have it fade out after a few seconds?
         // Change color to red?
         savedToFavorites = new JLabel("Saved to Favorites");
-        savedToFavorites.setBounds(520, 82, 150, 30);
+        savedToFavorites.setBounds(470, 82, 150, 30);
         add(savedToFavorites);
         savedToFavorites.setVisible(false);
         
         toFavorites = new ArrayList();
+        
+        // Search Again button
+        searchAgain = new JButton("Search Again");
+        searchAgain.setBounds(460, 30, 150, 50);
+        searchAgain.addActionListener(this);
+        add(searchAgain);
+        
+        // My Account button
+        myAccount = new JButton("My Account");
+        myAccount.setBounds(670, 30, 100, 50);
+        myAccount.addActionListener(this);
+        add(myAccount);
     }
     
     // Populates result pane from search
@@ -82,15 +96,25 @@ public class ResultsPanel extends JPanel implements ActionListener, ItemListener
     {
         Object o = e.getSource();
         
+        // Save selections to favorites
         if (o == saveToFavorites)
         {
+            FavoritesList faves = new FavoritesList("Default User", toFavorites);
             for (Resource r : toFavorites)
             {
-                // This will be more complex once we have 
-                // multiple users in round 2
-                FavoritesList faves = new FavoritesList("Default User", toFavorites);
-                savedToFavorites.setVisible(true);
+                //faves.add(r);
+                System.out.println(r.name + " saved to favorites");
             }
+            savedToFavorites.setVisible(true);
+        }
+        
+        // Search again - clean reset
+        if (o == searchAgain)
+        {
+            // Empty list of selected items to be saved to favorites
+            toFavorites.clear();
+            
+            
         }
     }
 
