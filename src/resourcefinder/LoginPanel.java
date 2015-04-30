@@ -37,6 +37,11 @@ public class LoginPanel extends JPanel implements ActionListener
         setLayout(null);
         setBounds(0, 0, 800, 400);
         
+        JLabel welcome = new JLabel("<html><font size=+2>Welcome to "
+                + "ResourceFinder!</font></html>");
+        welcome.setBounds(220, 25, 400, 100);
+        add(welcome);
+        
         // Admin login items
         adminInfo = new JLabel("<html><font size=+2>Administrator Login</font></html>",
                 JLabel.CENTER);

@@ -40,8 +40,31 @@ public class AdminPanel extends JPanel
         analytics.setBounds(625, 25, 200, 25);
         add(analytics);
         
-        test = new JButton("Test");
-        test.setBounds(100, 100, 100, 100);
-        add(test);
+        JLabel a2 = new JLabel("Most searched tag(s):");
+        a2.setBounds(575, 75, 200, 25);
+        add(a2);
+        
+        JLabel a3 = new JLabel("Most searched resource(s):");
+        a3.setBounds(575, 125, 200, 25);
+        add(a3);
+        
+        JLabel a4 = new JLabel("Most favorited resource(s):");
+        a4.setBounds(575, 175, 200, 25);
+        add(a4);
+        
+        
+        JTextField s1 = new JTextField();
+        s1.setBounds(310, 75, 200, 25);
+        add(s1);
+        JButton s2 = new JButton("Delete Resource");
+        s2.setBounds(310, 100, 200, 25);
+        add(s2);
+        
+        JTextField s3 = new JTextField();
+        s3.setBounds(25, 75, 200, 25);
+        add(s3);
+        JButton s4 = new JButton("Delete Student");
+        s4.setBounds(25, 100, 200, 25);
+        add(s4);
     }
 }
