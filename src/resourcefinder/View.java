@@ -16,7 +16,7 @@ public class View implements ActionListener
     SearchPanel searchPanel;
     ResultsPanel resultsPanel;
     AdminPanel adminPanel;
-    
+    StudentPanel studentPanel;
     
     public View()
     {
@@ -37,7 +37,7 @@ public class View implements ActionListener
         adminPanel.setVisible(false);
         
         // ResultsPanel setup
-        resultsPanel = new ResultsPanel();
+        resultsPanel = new ResultsPanel(this);
         frame.add(resultsPanel);
         resultsPanel.setVisible(false);
 
@@ -46,6 +46,10 @@ public class View implements ActionListener
         frame.add(searchPanel);
         searchPanel.setVisible(false);
         
+        // StudentPanel setup
+        studentPanel = new StudentPanel();
+        frame.add(studentPanel);
+        studentPanel.setVisible(false);
         
         
         frame.setVisible(true);

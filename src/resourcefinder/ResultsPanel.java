@@ -32,12 +32,16 @@ public class ResultsPanel extends JPanel implements ActionListener, ItemListener
     
     JLabel savedToFavorites;
     
-    public ResultsPanel()
+    View theView;
+    
+    public ResultsPanel(View theView)
     {
         super();
         
         setLayout(null);
         setBounds(0, 0, 800, 400);
+        
+        this.theView = theView;
         
         JLabel title = new JLabel("<html><font size=+2>Results</font></html>",
                                     JLabel.CENTER);
@@ -111,10 +115,17 @@ public class ResultsPanel extends JPanel implements ActionListener, ItemListener
         // Search again - clean reset
         if (o == searchAgain)
         {
-            // Empty list of selected items to be saved to favorites
             toFavorites.clear();
-            
-            
+            savedToFavorites.setVisible(false);
+            setVisible(false);
+            theView.searchPanel.setVisible(true);
+            //resultPane.removeAll();
+        }
+        
+        if (o == myAccount)
+        {
+            setVisible(false);
+            theView.studentPanel.setVisible(true);
         }
     }
 

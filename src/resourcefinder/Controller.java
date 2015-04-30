@@ -2,6 +2,7 @@ package resourcefinder;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.io.FileNotFoundException;
 import java.util.ArrayList;
 import java.util.Scanner;
 
@@ -24,7 +25,7 @@ public class Controller
     User currentUser;
     Search currentSearch;
 
-    public Controller()
+    public Controller() throws FileNotFoundException
     {
         db = new Database();
         

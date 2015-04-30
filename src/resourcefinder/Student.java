@@ -12,7 +12,17 @@ public class Student
     
     public Student()
     {
-        // Round 2
+        name = "";
+        searchHistory = new SearchCollection();
+        favorites = new FavoritesList(name);
+    }
+    
+    // Overloaded constructor
+    public Student(String name, SearchCollection history, FavoritesList faves)
+    {
+        this.name = name;
+        searchHistory = history;
+        favorites = faves;
     }
     
     void search()

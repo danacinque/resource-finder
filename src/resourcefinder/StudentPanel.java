@@ -15,8 +15,16 @@ import javax.swing.*;
  */
 public class StudentPanel extends JPanel
 {
+    JLabel title;
+            
     public StudentPanel()
     {
         super();
+        setLayout(null);
+        setBounds(0, 0, 800, 400);
+        
+        title = new JLabel("My Account");
+        title.setBounds(50, 50, 100, 25);
+        add(title);
     }
 }

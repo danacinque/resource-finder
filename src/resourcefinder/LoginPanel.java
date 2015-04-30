@@ -20,8 +20,11 @@ public class LoginPanel extends JPanel implements ActionListener
     JLabel adminInfo;
     
     JButton studentLogin;
+    JButton studentCreateAccount;
     JTextField studentUsernameField;
     JLabel studentInfo;
+    
+    
     
     View theView;
     
@@ -67,6 +70,12 @@ public class LoginPanel extends JPanel implements ActionListener
         add(studentLogin);
         studentLogin.addActionListener(this);
         
+        studentCreateAccount = new JButton("Create Account");
+        studentCreateAccount.setBounds(500, 280, 200, 25);
+        add(studentCreateAccount);
+        studentCreateAccount.addActionListener(this);
+        
+        
         
     }
 
@@ -89,12 +98,16 @@ public class LoginPanel extends JPanel implements ActionListener
         {
             String username = studentUsernameField.getText();
             System.out.print("Student username: " + username);
-            if (username.equals("test"))
-            {
-                setVisible(false);
-                theView.searchPanel.setVisible(true);
-            }
-            
+            setVisible(false);
+            theView.searchPanel.setVisible(true);
+        }
+        if (o == studentCreateAccount)
+        {
+            studentInfo.setBounds(450, 100, 300, 100);
+            studentInfo.setText("<html><font size=+2>Create New Account</font></html>");
+            studentUsernameField.setText("Enter New Username");
+            studentLogin.setText("Create Account");
+            studentCreateAccount.setVisible(false);
         }
     }
 }

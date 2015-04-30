@@ -28,6 +28,18 @@ public class AdminPanel extends JPanel
         setLayout(null);
         setBounds(0, 0, 800, 400);
         
+        JLabel studentEditor = new JLabel("Add and Delete Student Accounts");
+        studentEditor.setBounds(25, 25, 250, 25);
+        add(studentEditor);
+        
+        JLabel resourceEditor = new JLabel("Add and Delete Resources");
+        resourceEditor.setBounds(315, 25, 200, 25);
+        add(resourceEditor);
+        
+        JLabel analytics = new JLabel("Analytics");
+        analytics.setBounds(625, 25, 200, 25);
+        add(analytics);
+        
         test = new JButton("Test");
         test.setBounds(100, 100, 100, 100);
         add(test);
