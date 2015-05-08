@@ -25,7 +25,7 @@ public class Database
     FavoritesList favorites;
     
     
-    public Database() throws FileNotFoundException
+    public Database()
     {
         resourceDB = new ArrayList();
         tagDB = new TagCollection();
@@ -36,17 +36,7 @@ public class Database
         // This will be more complex when we expand into multiple
         // user roles in the second development cycle
         favorites = new FavoritesList("Default User");
-        
-        try 
-        {
-            FileInputStream fbs = new FileInputStream("danacinque.txt");
-            Scanner in = new Scanner(fbs);
-        }
-        
-        catch(FileNotFoundException e)
-        {
-            System.out.println("Something went wrong: " + e.getMessage());
-        }
+
     }
     
     static public void resourceDBSetup()

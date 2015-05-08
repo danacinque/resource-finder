@@ -13,21 +13,17 @@ public class SearchCollection
     // Constructor
     public SearchCollection()
     {
-        // Round 2
+        searches = new ArrayList();
     }
     
     void add(Search toAdd)
     {
-        
+        searches.add(toAdd);
     }
     
     void delete(Search toDelete)
     {
-        
+        searches.remove(toDelete);
     }
     
-    void get(Search toGet)
-    {
-        
-    }
 }

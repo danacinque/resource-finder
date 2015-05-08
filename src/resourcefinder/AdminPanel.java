@@ -67,4 +67,9 @@ public class AdminPanel extends JPanel
         s4.setBounds(25, 100, 200, 25);
         add(s4);
     }
+    
+    public void refreshStats()
+    {
+        
+    }
 }

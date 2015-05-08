@@ -62,8 +62,6 @@ public class ResultsPanel extends JPanel implements ActionListener, ItemListener
         add(saveToFavorites);
         
         // This text appears when favorites list is saved
-        // TODO: have it fade out after a few seconds?
-        // Change color to red?
         savedToFavorites = new JLabel("Saved to Favorites");
         savedToFavorites.setBounds(470, 82, 150, 30);
         add(savedToFavorites);
@@ -106,7 +104,7 @@ public class ResultsPanel extends JPanel implements ActionListener, ItemListener
             FavoritesList faves = new FavoritesList("Default User", toFavorites);
             for (Resource r : toFavorites)
             {
-                //faves.add(r);
+                faves.add(r);
                 System.out.println(r.name + " saved to favorites");
             }
             savedToFavorites.setVisible(true);
@@ -119,7 +117,7 @@ public class ResultsPanel extends JPanel implements ActionListener, ItemListener
             savedToFavorites.setVisible(false);
             setVisible(false);
             theView.searchPanel.setVisible(true);
-            //resultPane.removeAll();
+            resultPane.removeAll();
         }
         
         if (o == myAccount)

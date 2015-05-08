@@ -27,4 +27,9 @@ public class StudentPanel extends JPanel
         title.setBounds(50, 50, 100, 25);
         add(title);
     }
+    
+    public void refreshStats()
+    {
+        
+    }
 }
