@@ -28,7 +28,7 @@ public class Controller
     {
         db = new Database();
         
-        view = new View();
+        view = new View(db);
         
         /*// Command-line version for testing the back end
         System.out.println("Welcome to the resource finder!");

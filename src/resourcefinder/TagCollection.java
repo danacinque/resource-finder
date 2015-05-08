@@ -26,6 +26,11 @@ public class TagCollection
         tags.remove(toDelete);
     }
     
+    Tag get(int indexToGet)
+    {
+        return tags.get(indexToGet);
+    }
+    
     // Added
     String getInfo()
     {

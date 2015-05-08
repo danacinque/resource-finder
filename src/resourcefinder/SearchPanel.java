@@ -31,6 +31,7 @@ public class SearchPanel extends JPanel implements ItemListener, ActionListener
         
         view = theView;
         
+        
         setLayout(null);
         setBounds(0, 0, 800, 400);
         
@@ -149,7 +150,7 @@ public class SearchPanel extends JPanel implements ItemListener, ActionListener
         
         if (o == search)
         {
-            searchInProgress = new Search(criteria);
+            searchInProgress = new Search(criteria, view.db);
             System.out.println(searchInProgress.getResults()); // for debugging
             this.setVisible(false);
             view.resultsPanel.setVisible(true);

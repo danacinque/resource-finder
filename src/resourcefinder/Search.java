@@ -17,10 +17,10 @@ public class Search
     Database db;
 
     // Constructor
-    public Search(ArrayList<Tag> criteria)
+    public Search(ArrayList<Tag> criteria, Database db)
     {
         tags = criteria;
-        db = new Database();
+        this.db = db;
         results = new ArrayList();
         
         // SEARCH LOGIC
@@ -31,8 +31,10 @@ public class Search
                 if (r.tags.contains(t))
                 {
                     results.add(r);
+                    r.updateSearches();
                 }
             }
+            t.updateStats();
         }
     }
     // The search logic made more sense in the constructor,

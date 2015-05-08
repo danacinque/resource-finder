@@ -12,14 +12,16 @@ import javax.swing.*;
 public class View implements ActionListener
 {
     JFrame frame;
+    Database db;
     LoginPanel loginPanel;
     SearchPanel searchPanel;
     ResultsPanel resultsPanel;
     AdminPanel adminPanel;
     StudentPanel studentPanel;
     
-    public View()
+    public View(Database db)
     {
+        this.db = db;
         // Frame setup
         frame = new JFrame();
         frame.setTitle("Resource Finder");

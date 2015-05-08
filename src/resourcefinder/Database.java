@@ -16,10 +16,10 @@ but it's proving trickier than I thought, so I will look into other alternatives
 */
 public class Database
 {
-    static ArrayList<Resource> resourceDB;
-    static TagCollection tagDB;
+    ArrayList<Resource> resourceDB;
+    TagCollection tagDB;
     
-    static Resource coursera, codecademy, sciShow, khanAcademy,
+    Resource coursera, codecademy, sciShow, khanAcademy,
             udacity, lynda, hourOfCode;
     
     FavoritesList favorites;
@@ -39,7 +39,7 @@ public class Database
 
     }
     
-    static public void resourceDBSetup()
+    public void resourceDBSetup()
     {
         /*
             COURSERA
@@ -164,7 +164,7 @@ public class Database
         
     }
     
-    static public void tagDBSetup()
+    public void tagDBSetup()
     {
         /*
         This section right now is redundant because I have the tags

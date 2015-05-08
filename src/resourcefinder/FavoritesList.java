@@ -56,4 +56,7 @@ public class FavoritesList
         return containsResource;
     }
     
+    // Update stats? Or something?
+    
+    
 }
